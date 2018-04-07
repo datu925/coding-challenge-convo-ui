@@ -5,9 +5,9 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-
     title Pushbot
 
+    link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
     style
       include ../assets/email.css
 
@@ -19,14 +19,29 @@ html(lang="en")
       div(class="center-content")
         table(cellspacing="0" cellpadding="0" border="0" align="center" class="container-outer" role="presentation")
           //- vertical padding
+          img(src="https://embedwistia-a.akamaihd.net/deliveries/dea996c4b156333b439753181a0ba145799f6e71.jpg")
+          hr
           tr
             td(style="padding: 20px 0;")
-
           tr
             td(class="container-inner")
               table(cellspacing="0" cellpadding="0" border="0" width="100%")
                 tr
-                  td(class="content")
+                  td(class="content headline")
                     | Your task was canceled! Bummer.
+                tr
+                  td(style="padding: 20px 0;")
+                tr
+                  td(class="content")
+                    | If you have any questions, or think this message may have been received in error, please reach out to 
+                    a(href="mailto:help@catalytic.com") help@catalytic.com
+                    | . 
+                tr
+                  td(style="padding: 20px 0;")
+                tr
+                  td(class="content learn-more")
+                    | This message sent by Pushbot, Catalytic's platform for streamlining business processes. Learn more at 
+                    a(href="http://catalytic.com") Catalytic
+                    | .
 
       <!--[if mso]></td></tr></table><![endif]-->

@@ -1,6 +1,7 @@
 'use strict';
-
+const htmlToText = require('html-to-text');
 const nodemailer = require('nodemailer');
+const cancelTemplate = require('./assets/templates/canceled');
 
 const localTransport = nodemailer.createTransport({
     host: '127.0.0.1',
@@ -16,6 +17,7 @@ function sendEmail (options, callback) {
 
     // TODO Step 2: Generate plaintext alternative from HTML
     // This should take no more than a few lines
+    email.text = htmlToText.fromString(email.html);
 
     return localTransport.sendMail(email, (err, info) => {
         if (err) {
@@ -31,6 +33,10 @@ function sendEmail (options, callback) {
 
 function respondToEmail (email, callback) {
     // TODO: implement as part of Step 5
+    return sendEmail({
+        html: cancelTemplate()
+    }, callback);
+
 }
 
 module.exports = {
